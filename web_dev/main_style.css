@@ -1,3 +1,24 @@
+.headshot{
+  max-height: 30vh;
+  max-width: 20vw;
+  border-radius: 50%;
+}
+.headshot_wrapper{
+  margin-top: 16px;
+  float: left;
+}
+.about_dev_wrapper{
+  max-width: 60vw;
+  min-width: 50vw;
+  height: 80vh;
+  margin-top: 16px;
+  margin-left: 16px;
+  float: left;
+}
+.about_dev_content{
+  width: 100%;
+  height: 100%;
+}
 .site_nav{
     width: 100vw;
     text-align: center;
@@ -18,14 +39,16 @@
     color: white;
     text-decoration: none;
 }
-body
+.index_body
 {
     background-image: url('logo_1.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
 }
-
+body{
+  margin: 0;
+}
 /* ------------ PULLED FROM W3SCHOOLS EXAMPLE -------------*/
  /* Add a black background color to the top navigation */
  .topnav {

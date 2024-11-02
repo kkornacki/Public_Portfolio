@@ -150,6 +150,8 @@ def get_class_weapons(char_class_param):
     
     for item in weapons_options:
         print(f"\t\t> {item}")
-        
+
+def equip_char_active_weapon():
+    pass    
 
 start_game()

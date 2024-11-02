@@ -71,6 +71,6 @@ def process_user_command(user_prompt_param):
 populate_command_list()
 
 # INTRODUCTION
-print("Welcome to Text Warrior Version 1!")
+print("==== DATA STRUCTURE PRACTICE PROGRAM ====!")
 
 prompt_for_login()

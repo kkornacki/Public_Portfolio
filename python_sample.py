@@ -1,3 +1,4 @@
+import os 
 
 command_list = []
 
@@ -60,9 +61,15 @@ def process_user_command(user_prompt_param):
       global command_list
       for item in command_list:
           print(f'{item}')
+    elif user_prompt_param == 'cls':
+        os.system('cls' if os.name == 'nt' else 'clear') # Per Google Search AI Generated clear-terminal solution
 
     elif user_prompt_param == 'exit':
         exit(0)
+    else:
+        print('\tInvalid command.')
+        awaiting_command()
+
 
     awaiting_command()
 

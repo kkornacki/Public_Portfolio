@@ -62,7 +62,11 @@ def process_input(input_param):
     elif input_value == "determine equality":
         determine_equality()
         last_command = "determine equality"
+    elif input_value == "string length":
+        get_string_length()
+        last_command = "string length"
     elif input_value == "exit" or input_value == "end" or input_value == "close":
+        print("\t> Terminating program execution - Goodbye!")
         exit()
     elif "run loop " in input_value:
         run_loop_x_times(input_value)
@@ -93,7 +97,8 @@ def help_prompt():
         "calculate product",
         "current date",
         "determine equality",
-        "run loop {x-number} of times"
+        "run loop {x-number} of times",
+        "string length"
     )
     return available_commands
 
@@ -112,7 +117,7 @@ def calculate_remainder():
     param_2 = input("Enter the second parameter: ")
     result = (float(param_1) % float(param_2))
 
-    print(f"The remainder of {param_1} / {param_2} is {result}")
+    print(f"\t> The remainder of {param_1} / {param_2} is {result}")
     return
 
 def calculate_sum():
@@ -120,7 +125,7 @@ def calculate_sum():
     param_2 = input("Enter the second parameter: ")
     result = (float(param_1) + float(param_2))
 
-    print(f"The sum of {param_1} + {param_2} is {result}")
+    print(f"\t> The sum of {param_1} + {param_2} is {result}")
     return
 
 def calculate_difference():
@@ -128,7 +133,7 @@ def calculate_difference():
     param_2 = input("Enter the second parameter: ")
     result = (float(param_1) - float(param_2))
 
-    print(f"The difference of {param_1} - {param_2} is {result}")
+    print(f"\t> The difference of {param_1} - {param_2} is {result}")
     return
 
 def calculate_average():
@@ -143,7 +148,7 @@ def calculate_average():
     average = total / len(float_array)
 
 
-    print(f"The average of {float_array} is {average: .2f}")
+    print(f"\t> The average of {float_array} is {average: .2f}")
     return
 
 def calculate_min():
@@ -153,7 +158,7 @@ def calculate_min():
  
     result = min(float_array)
 
-    print(f"The lowest value of the data set {float_array} is {result}")
+    print(f"\t> The lowest value of the data set {float_array} is {result}")
     return
 
 def calculate_max():
@@ -163,7 +168,7 @@ def calculate_max():
  
     result = max(float_array)
 
-    print(f"The highest value of the data set {float_array} is {result}")
+    print(f"\t> The highest value of the data set {float_array} is {result}")
     return
 
 def calculate_product():
@@ -171,7 +176,7 @@ def calculate_product():
     param_2 = input("Enter the second parameter: ")
     result = (float(param_1) * float(param_2))
 
-    print(f"The product of {param_1} * {param_2} is {result}")
+    print(f"\t> The product of {param_1} * {param_2} is {result}")
     return
 
 
@@ -185,7 +190,7 @@ def determine_equality():
     param_2 = input("Enter the second parameter: ")
     result = param_1 == param_2
 
-    print(f"{param_1} == {param_2} equality check evaluates to: {result}")
+    print(f"\t> {param_1} == {param_2} equality check evaluates to: {result}")
     return
 
 def run_loop_x_times(input_value_param):
@@ -197,17 +202,28 @@ def run_loop_x_times(input_value_param):
             num_runs += input_value_param[iterator]
         iterator += 1
 
-    print(f"Function will execute {num_runs} times.")
+    print(f"\t> Function will execute {num_runs} times.")
 
     iterator = 1
 
     while iterator <= int(num_runs):
-        print(f"\t\tIteration #{iterator} ")
+        print(f"\t\t> Iteration #{iterator} ")
         iterator += 1 
     return
+def get_string_length():
+    eval_string = input("Enter the string for evaluation: ")
+    string_length = len(eval_string)
+
+    string_nospace = eval_string.replace(' ', '')
+    string_length_nospace = len(string_nospace)
+
+    print(f"\t> String Length: {string_length} | Without Whitespace: {string_length_nospace}")
+
+    return;
 
 def run_clear_terminal():
     # Google Search for 'how to clear terminal screen from Python code'
     os.system('cls' if os.name == 'nt' else 'clear')
     return
+
 program_start()

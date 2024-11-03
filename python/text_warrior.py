@@ -1,19 +1,4 @@
-character = {
-    "char_name": '',
-    "char_gender": '',
-    "char_prefix": '',
-    "char_class": '',
-    "lvl_attack": 1,
-    "exp_attack": 0,
-    "lvl_strength": 1,
-    "exp_strength": 0,
-    "lvl_defense": 1,
-    "exp_defense": 0,
-    "lvl_range": 1,
-    "exp_range": 0,
-    "lvl_magic": 1,
-    "exp_magic": 0
-}
+
 
 # DEFINE WEAPONS PER CLASS
 weapons_magic = {
@@ -68,6 +53,25 @@ weapons_warrior = {
     }
 }
 
+god_sword = {
+    "Power": 1000,
+    "Accuracy": 100
+}
+god_bow = {
+    "Power": 2000,
+    "Accuracy": 200
+}
+god_staff = {
+    "Power": 3000,
+    "Accuracy": 300
+}
+god_weapons = {
+    "God Sword": god_sword,
+    "God Bow" : god_bow,
+    "God Staff" : god_staff
+}
+
+
 # DEFINE ARMOUR PER CLASS
 armour_magic = {}
 armour_range = {}
@@ -79,8 +83,8 @@ perks_range = {}
 perks_warrior = {}
 
 def start_game():
-    global character
 
+    character = character_initialization()
 
     while character["char_name"] == '':
         new_char_name = input("Please enter a valid character name: ")
@@ -96,7 +100,7 @@ def start_game():
         character["char_prefix"] = 'Madam'
 
     while character["char_class"] == '':
-        new_char_class = input("Please enter your characters class [Warrior, Ranger, Mage]: ")
+        new_char_class = input("Please enter your characters class [Warrior, Ranger, Mage, Godmode]: ")
         character["char_class"] = new_char_class
 
     confirm_character = input("Confirm your selections & being your adventure? [Y\\N]:")
@@ -107,7 +111,9 @@ def start_game():
         restart_game()
 
 def restart_game():
-    global character
+    start_game()
+
+def character_initialization():
     character = {
         "char_name": '',
         "char_gender": '',
@@ -124,16 +130,17 @@ def restart_game():
         "lvl_magic": 1,
         "exp_magic": 0
     }
-    start_game()
+    return character
 
-
-def greet_new_user(char_param):
-    print(f"\t> Greetings {char_param["char_prefix"]} {char_param["char_name"]}! Welcome to Text Warrior!")
+def greet_new_user(character_param):
+    print(f"\t> Greetings {character_param["char_prefix"]} {character_param["char_name"]}! Welcome to Text Warrior!")
     print("\t> Our first order of business is to choose your starting weapon!")
-    get_class_weapons(char_param["char_class"])
+    
+    get_class_weapons(character_param["char_class"])
     
 
 def get_class_weapons(char_class_param):
+    
     weapons_options = {}
 
     if char_class_param == "Mage" or char_class_param == "mage":
@@ -145,11 +152,24 @@ def get_class_weapons(char_class_param):
     elif char_class_param == "Warrior" or char_class_param == "warrior":
         global weapons_warrior
         weapons_options = weapons_warrior
+    elif char_class_param == "Godmode" or char_class_param == "godmode":
+        global god_weapons
+        weapons_options = god_weapons
     
     print("\t> Available items for your character class are: ")
-    
-    for item in weapons_options:
-        print(f"\t\t> {item}")
+
+    iterator = 0
+
+    for weapon, weapon_attribute in weapons_options.items():
+        weapon_power = weapon_attribute["Power"]
+        weapon_accuracy = weapon_attribute["Accuracy"]
+        print(f"\t\t> Option #{iterator} : {weapon} --> Power: {weapon_power} | Accuracy {weapon_accuracy}")
+        iterator += 1
+    iterator = 0
+
+    selected_weapon = input("Please enter the option # you would like to equip: ")
+    equipped_weapon = weapons_options[selected_weapon]
+    print(f"{equipped_weapon}")
 
 def equip_char_active_weapon():
     pass    

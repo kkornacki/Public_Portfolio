@@ -68,6 +68,12 @@ def process_input(input_param):
     elif "run loop " in input_value:
         run_loop_x_times(input_value)
         last_command = input_value
+    elif input_value == 'parse array' or input_value == 'parse arr':
+        parse_array()
+        last_command = 'parse array'
+    elif input_value == 'data types' or input_value == 'data':
+        show_data_types()
+        last_command = 'data types'
     elif input_value == "cls":
         run_clear_terminal()
         last_command = "cls"
@@ -95,7 +101,9 @@ def help_prompt():
         "\'date\' | Returns the current system date in MM/DD/YYYY format.",
         "\'equality\', \'equal\' | Determines whether two values are exactly equal.",
         "\'run loop {x-number} of times\' | Runs a loop of logic the specified number of times.",
-        "\'string length\', \'string len\', \'str len\' | Determines the length of the provided input string."
+        "\'string length\', \'string len\', \'str len\' | Determines the length of the provided input string.",
+        "\'parse array\', \'parse arr\' | Parses a pre-defined array and outputs each item within the array.",
+        "\'data types\', \'data\' | Outputs a Data Dictionary of Python Data Types and their applicable attributes."
     )
 
     print("\t======== AVAILABLE COMMANDS ========")
@@ -123,6 +131,7 @@ def calculate_remainder():
     print(f"\t> The remainder of {param_1} / {param_2} is {result}")
     return
 
+
 def calculate_sum():
     param_1 = input("Enter the first parameter: ")
     param_2 = input("Enter the second parameter: ")
@@ -131,6 +140,7 @@ def calculate_sum():
     print(f"\t> The sum of {param_1} + {param_2} is {result}")
     return
 
+
 def calculate_difference():
     param_1 = input("Enter the first parameter: ")
     param_2 = input("Enter the second parameter: ")
@@ -138,6 +148,7 @@ def calculate_difference():
 
     print(f"\t> The difference of {param_1} - {param_2} is {result}")
     return
+
 
 def calculate_average():
     '''
@@ -154,6 +165,7 @@ def calculate_average():
     print(f"\t> The average of {float_array} is {average: .2f}")
     return
 
+
 def calculate_min():
     input_value_string= input("Enter the values for which you want to calculate the minimum (lowest) value: ")
     input_values = input_value_string.split()
@@ -164,6 +176,7 @@ def calculate_min():
     print(f"\t> The lowest value of the data set {float_array} is {result}")
     return
 
+
 def calculate_max():
     input_value_string= input("Enter the values for which you want to calculate the max (highest) value: ")
     input_values = input_value_string.split()
@@ -173,6 +186,7 @@ def calculate_max():
 
     print(f"\t> The highest value of the data set {float_array} is {result}")
     return
+
 
 def calculate_product():
     param_1 = input("Enter the first parameter: ")
@@ -188,6 +202,7 @@ def get_current_date():
     print("\t> " + exact_date_time.strftime('%x'))
     return
 
+
 def determine_equality():
     param_1 = input("Enter the first parameter: ")
     param_2 = input("Enter the second parameter: ")
@@ -195,6 +210,7 @@ def determine_equality():
 
     print(f"\t> {param_1} == {param_2} equality check evaluates to: {result}")
     return
+
 
 def run_loop_x_times(input_value_param):
     iterator = 0
@@ -213,6 +229,8 @@ def run_loop_x_times(input_value_param):
         print(f"\t\t> Iteration #{iterator} ")
         iterator += 1 
     return
+
+
 def get_string_length():
     eval_string = input("Enter the string for evaluation: ")
     string_length = len(eval_string)
@@ -223,6 +241,127 @@ def get_string_length():
     print(f"\t> String Length: {string_length} | Without Whitespace: {string_length_nospace}")
 
     return;
+
+def show_data_types():
+    data_type_dictionary = {
+        "String":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Int":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Float":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Complex":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "List":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Tuple":
+        {
+            "Immutable": True,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Range":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Dict":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Set":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Frozenset":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Bool":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Byte":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Bytearray":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "Memoryview":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        },
+        "NoneType":
+        {
+            "Immutable": False,
+            "Iterable": True,
+            "Ordered": True,
+            "Indexed": False
+        }
+    }
+
+    for dataType, attribute in data_type_dictionary.items():
+        print(f"\t> {dataType} | Immutable: {attribute["Immutable"]} | Iterable: {attribute["Iterable"]} | Ordered: {attribute["Ordered"]} | Indexed: {attribute["Indexed"]}")
+
+    return
+
+def parse_array():
+    my_array = ["BMW", "Maserati", "Volvo", "Honda", "Ford", "GM", "Tesla"]
+    for car in my_array:
+        print(f"\t> Make: {car}")
+    return
+
 
 def run_clear_terminal():
     # Google Search for 'how to clear terminal screen from Python code'

@@ -27,42 +27,39 @@ def process_input(input_param):
     global last_command
 
     if input_value == "help":
-        output = help_prompt()
-        print("\t======== AVAILABLE COMMANDS ========")
-
-        for command in output:
-            print(f"\t --|> {command}")
-    elif input_value == "calculate true or false":
+        help_prompt()
+        last_command = "help"
+    elif 'true' in input_value or 'false' in input_value:
         calculate_true_false()
-        last_command = "calculate true or false"
-    elif input_value == "calculate remainder":
+        last_command = "true or false"
+    elif input_value == "remainder" or input_value == 'divide':
         calculate_remainder()
-        last_command = "calculate remainder"
-    elif input_value == "calculate sum":
+        last_command = "remainder"
+    elif input_value == "sum":
         calculate_sum()
-        last_command = "calculate sum"
-    elif input_value == "calculate difference":
+        last_command = "sum"
+    elif input_value == "difference" or input_value == 'diff':
         calculate_difference()
-        last_command = "calculate difference"
-    elif input_value == "calculate product":
+        last_command = "difference"
+    elif input_value == "product" or input_value == 'prod':
         calculate_product()
-        last_command = "calculate product"
-    elif input_value == "calculate average":
+        last_command = "product"
+    elif input_value == "average" or input_value == 'avg':
         calculate_average()
-        last_command = "calculate average"
-    elif input_value == "calculate min":
+        last_command = "average"
+    elif input_value == "min":
         calculate_min()
-        last_command = "calculate min"
-    elif input_value == "calculate max":
+        last_command = "min"
+    elif input_value == "max":
         calculate_max()
-        last_command = "calculate max"
-    elif input_value == "current date":
+        last_command = "max"
+    elif input_value == "date":
         get_current_date()
-        last_command = "current date"
-    elif input_value == "determine equality":
+        last_command = "date"
+    elif input_value == "equality" or input_value == 'equal':
         determine_equality()
-        last_command = "determine equality"
-    elif input_value == "string length":
+        last_command = "equality"
+    elif input_value == "string length" or input_value == 'string len' or input_value == 'str len':
         get_string_length()
         last_command = "string length"
     elif input_value == "exit" or input_value == "end" or input_value == "close":
@@ -83,24 +80,30 @@ def process_input(input_param):
 
 def help_prompt():
     available_commands = (
-        "help",
-        "exit / end / close",
-        "repeat",
-        "cls | clears terminal screen",
-        "calculate true or false",
-        "calculate remainder",
-        "calculate sum",
-        "calculate difference",
-        "calculate average",
-        "calculate min",
-        "calculate max",
-        "calculate product",
-        "current date",
-        "determine equality",
-        "run loop {x-number} of times",
-        "string length"
+        "\'help\' | Lists all available commands & a description of their functionality.",
+        "\'exit\' / \'end\' / \'close\' | Terminates program execution.",
+        "\'repeat\' | Repeats the last command statement used.",
+        "\'cls\' | Clears the terminal screen.",
+        "\'true\', \'false\', \'true or false\' | Evaluates one value to a Boolean True or False.",
+        "\'remainder\', \'divide\' | Calculates the remainder of a division operation with two operands.",
+        "\'sum\' | Calculates the sum of an addition operation with two operands",
+        "\'difference\', \'diff\' | Calculates the difference of a subtraction operation with two operands.",
+        "\'average\', \'avg\' | Calculates the average of all numeric values in a given data set.",
+        "\'min\' | Calculates the min (lowest) value from a given numeric data set." ,
+        "\'max\' | Calculates the max (highest) value from a given numeric data set.",
+        "\'product\', \'prod\' | Calculates the product of a multiplication operation with two operands.",
+        "\'date\' | Returns the current system date in MM/DD/YYYY format.",
+        "\'equality\', \'equal\' | Determines whether two values are exactly equal.",
+        "\'run loop {x-number} of times\' | Runs a loop of logic the specified number of times.",
+        "\'string length\', \'string len\', \'str len\' | Determines the length of the provided input string."
     )
-    return available_commands
+
+    print("\t======== AVAILABLE COMMANDS ========")
+
+    for command in available_commands:
+        print(f"\t> {command}")
+
+    return
 
 
 def calculate_true_false():
@@ -182,7 +185,7 @@ def calculate_product():
 
 def get_current_date():
     exact_date_time = datetime.datetime.now()
-    print(exact_date_time.strftime("%x"))
+    print("\t> " + exact_date_time.strftime('%x'))
     return
 
 def determine_equality():

@@ -1,6 +1,17 @@
 import datetime
 import os
-
+'''
+    This program is intended to practice & illustrate understanding of the following:
+        1. Passing parameters and working with arguments
+        2. Controlling the flow of a program
+        3. Maintaining control of LOOP structures (for & while)
+        4. Finding solutions using breadcrumbs as needed
+        5. Processing user input and storing it for the duration of program execution
+    
+    Author: Keith Kornacki
+    Initial Date Created: 11/2/2024
+    
+'''
 run_program = True
 last_command = ''
 

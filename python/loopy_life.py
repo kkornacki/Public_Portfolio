@@ -1,4 +1,5 @@
 import datetime
+import os
 
 run_program = True
 last_command = ''
@@ -52,6 +53,12 @@ def process_input(input_param):
         last_command = "determine equality"
     elif input_value == "exit" or input_value == "end" or input_value == "close":
         exit()
+    elif "run loop " in input_value:
+        run_loop_x_times(input_value)
+        last_command = input_value
+    elif input_value == "cls":
+        run_clear_terminal()
+        last_command = "cls"
     elif input_value == "repeat":
         process_input(last_command)
     else:
@@ -64,6 +71,7 @@ def help_prompt():
         "help",
         "exit / end / close",
         "repeat",
+        "cls | clears terminal screen",
         "calculate true or false",
         "calculate remainder",
         "calculate sum",
@@ -73,7 +81,8 @@ def help_prompt():
         "calculate max",
         "calculate product",
         "current date",
-        "determine equality"
+        "determine equality",
+        "run loop {x-number} of times"
     )
     return available_commands
 
@@ -168,4 +177,26 @@ def determine_equality():
     print(f"{param_1} == {param_2} equality check evaluates to: {result}")
     return
 
+def run_loop_x_times(input_value_param):
+    iterator = 0
+    num_runs = ''
+    
+    while iterator < (len(input_value_param)):
+        if input_value_param[iterator].isnumeric():
+            num_runs += input_value_param[iterator]
+        iterator += 1
+
+    print(f"Function will execute {num_runs} times.")
+
+    iterator = 1
+
+    while iterator <= int(num_runs):
+        print(f"\t\tIteration #{iterator} ")
+        iterator += 1 
+    return
+
+def run_clear_terminal():
+    # Google Search for 'how to clear terminal screen from Python code'
+    os.system('cls' if os.name == 'nt' else 'clear')
+    return
 program_start()

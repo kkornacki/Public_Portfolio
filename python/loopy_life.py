@@ -1,13 +1,12 @@
 run_program = True
 last_command = ''
 
-
-
 def program_start():
     global run_program
     while run_program:
         user_input = input("awaiting next command: ")
         process_input(user_input)
+
 
 def process_input(input_param):
     input_value = input_param.lower()
@@ -25,6 +24,15 @@ def process_input(input_param):
     elif input_value == "calculate remainder":
         calculate_remainder()
         last_command = "calculate remainder"
+    elif input_value == "calculate sum":
+        calculate_sum()
+        last_command = "calculate sum"
+    elif input_value == "calculate difference":
+        calculate_difference()
+        last_command = "calculate difference"
+    elif input_value == "calculate average":
+        calculate_average()
+        last_command = "calculate average"
     elif input_value == "exit" or input_value == "end" or input_value == "close":
         exit()
     elif input_value == "repeat":
@@ -32,6 +40,7 @@ def process_input(input_param):
     else:
         print("Invalid command received.")
         program_start()
+
 
 def help_prompt():
     available_commands = (
@@ -46,9 +55,11 @@ def help_prompt():
         "calculate min",
         "calculate max",
         "calculate product",
+        "current date",
         "determine equality"
     )
     return available_commands
+
 
 def calculate_true_false():
     input_param = input("Enter a singular value to be evaluated as True or False: ")
@@ -57,11 +68,44 @@ def calculate_true_false():
     else:
         print(False)
     return
+
+
 def calculate_remainder():
     param_1 = input("Enter the first parameter: ")
     param_2 = input("Enter the second parameter: ")
     result = (float(param_1) % float(param_2))
-    
+
     print(f"The remainder of {param_1} / {param_2} is {result}")
+    return
+
+def calculate_sum():
+    param_1 = input("Enter the first parameter: ")
+    param_2 = input("Enter the second parameter: ")
+    result = (float(param_1) + float(param_2))
+
+    print(f"The sum of {param_1} + {param_2} is {result}")
+    return
+
+def calculate_difference():
+    param_1 = input("Enter the first parameter: ")
+    param_2 = input("Enter the second parameter: ")
+    result = (float(param_1) - float(param_2))
+
+    print(f"The difference of {param_1} - {param_2} is {result}")
+    return
+
+def calculate_average():
+    '''
+        Utilized the following info doc: https://www.geeksforgeeks.org/python-convert-float-string-list-to-float-values/
+    '''
+    input_value_string= input("Enter the values for which you want an average: ")
+    input_values = input_value_string.split()
+    float_array = [float(number) for number in input_values]
+ 
+    total = sum(float_array)
+    average = total / len(float_array)
+
+
+    print(f"The average of {float_array} is {average: .2f}")
     return
 program_start()

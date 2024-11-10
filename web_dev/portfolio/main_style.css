@@ -1,6 +1,12 @@
+.my_btn{
+
+}
+.my_btn:hover{
+  cursor: pointer;
+}
 .headshot{
-  max-height: 30vh;
-  max-width: 20vw;
+  max-height: 15vh;
+  max-width: 15vw;
   border-radius: 50%;
 }
 .headshot_wrapper{

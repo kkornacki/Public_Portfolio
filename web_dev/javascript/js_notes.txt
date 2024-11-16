@@ -227,4 +227,77 @@ String Templates utilize backticks, and allow for INTERPOLATION:
     let firstName = "Keith"
     let lastName = "Kornacki"
     let fullName = `Welcome ${firstName} ${lastName}!`;
-    
+INTEGER PRECISION:
+    Integer values are accurate up to 15 digits.
+FLOATING-POINT PRECISION:
+    Floating point values can be a max length of 17 decimal places.
+    Note that floating point arithmetic is not always 100% accurate.
+        Instead of:
+            let x = 0.2 + 0.1
+        You could do:
+            let x = (0.2 * 10 + 0.1 * 10) / 10;
+Javascript will try to convert strings to numbers whenever possible.
+You can use the global JavaScript function isNaN() to determine whether the value is a number.
+If your calculation returns a number that is outside the largest possible number, you get:
+    Infinity or -Infinity
+By default, JavaScript displays numbers as Base 10 Decimals. You can use the toString() method to output numbers from base 2 to base 36.
+    - Hexadecimal is base 16
+    - Decimal is base 10
+    - Octal is base 8
+    - Binary is base 2
+JAVASCRIPT BIGINT Values  
+    - BigInt variables are used to store large integer values that are too big to be represented by a normal number.
+        BigInt can not have decimals, and cannot be in a calculation with anything other than another BigInt.
+    - Integers are accurate up to 15 digits.
+    - To create a BigInt, append 'n' to the end of an integer or call BigInt()
+        let x = 9999999999999999;
+        let y = 9999999999999999n;
+        let x = 1234567890123456789012345n;
+        let y = BigInt(1234567890123456789012345)
+    - BigInt (Data Type) is the second numeric data type in JavaScript after 'Number'
+    - With BigInt, the total number of supported data types in JavaScript is now 8:
+        1. String
+        2. Number
+        3. BigInt 
+        4. Boolean 
+        5. Undefined 
+        6. Null 
+        7. Symbol 
+        8. Object 
+NEW NUMBER METHODS:
+    ES6 added the following two new methods for the Number object:
+        - Number.isInteger()
+        - Number.isSafeInteger()
+JAVASCRIPT NUMBER METHODS:
+    - toString()    Returns a number as a string
+    - toExponential()   Returns a number written in exponential notation
+            > A parameter passed into this method dictates how many characters are behind the decimal point
+    - toFixed()     Returns a number witha  number of decimals 
+            > This is generally used for working with money or financial values
+    - toPrecision()     Returns a number written with a specified length 
+    - valueOf()     Returns a number as a number 
+CONVERTING VARIABLES TO NUMBERS:
+    - Number()      Returns a number converted from its argument
+    - parseFloat()  Parses its argument and returns a floating point number
+    - parseInt()    Parses its argument and returns a whole number 
+ARRAYS IN JAVASCRIPT:
+    -   my_array = ["item one", "item two", "item three"]
+        my_array[0] // prints "item one"
+        my_array.toString() // Prints all items in the array in comma separated format.
+        document.getElementById("someElement").innerHTML = my_array // assigns all of the values within my_array to the innerHTML for display.
+    - Array elements can be Objects, for example;
+        myArray[0] = Date.now;
+        myArray[1] = myFunction;
+        myArray[2] = myCars;
+    - for and forEach loops are excellent methods of accessing or looping through Array Elements and performing some action.
+    - The easiest way to add elements to an array is the push() method.
+        myArray = ["BMW", "Mercedes", "Porsche"]
+        myArray.push("Tesla")   // myArray now adds "Tesla" as an array element.
+ASSOCIATIVE (HASH) ARRAYS:
+    - An associative (or Hash) array, is an array with named indexes (similar to a dictionary in Python).
+        JavaScript DOES NOT SUPPORT ASSOCIATIVE ARRAYS
+        const familyArray = [];
+        familyArray[0] = "Aidan";
+        familyArray[1] = "Chloe";
+        familyArray[2] = "Keith";
+BREAK POINT: JS ARRAY METHODS W3SCHOOLS 

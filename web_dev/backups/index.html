@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<body class="index_body" style="background-color: black;">
+  <head>
+    <script src="scripts_js/color-modes.js"></script>
+    <title>Portfolio of Keith Kornacki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio for Web & Software Developer: Keith Kornacki">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="title" content="Keith Kornacki">
+    <title>Grid Template · Bootstrap v5.3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Almendra Display' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+      body{
+        background: rgb(2,0,36);
+        background: -moz-linear-gradient(117deg, rgba(2,0,36,1) 0%, rgba(36,36,43,1) 69%, rgba(64,64,175,1) 73%, rgba(54,54,144,1) 76%, rgba(29,29,110,1) 80%, rgba(12,40,49,1) 84%, rgba(9,80,96,1) 88%, rgba(0,212,255,1) 92%, rgba(77,127,161,1) 97%);
+        background: -webkit-linear-gradient(117deg, rgba(2,0,36,1) 0%, rgba(36,36,43,1) 69%, rgba(64,64,175,1) 73%, rgba(54,54,144,1) 76%, rgba(29,29,110,1) 80%, rgba(12,40,49,1) 84%, rgba(9,80,96,1) 88%, rgba(0,212,255,1) 92%, rgba(77,127,161,1) 97%);
+        background: linear-gradient(117deg, rgba(2,0,36,1) 0%, rgba(36,36,43,1) 69%, rgba(64,64,175,1) 73%, rgba(54,54,144,1) 76%, rgba(29,29,110,1) 80%, rgba(12,40,49,1) 84%, rgba(9,80,96,1) 88%, rgba(0,212,255,1) 92%, rgba(77,127,161,1) 97%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#4d7fa1",GradientType=1);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-right: 2vw;
+        padding-left: 2vw;
+        height: 100vh;
+        width: 99vw;
+      }
+      .mb-4{
+        font-family: Verdana, sans-serif;
+      }
+      .intro_image{
+        max-height: 30%;
+        max-width: 100%;
+        border-radius: 200px;
+      }
+      .nav_wrapper{
+        width: 100%;
+      }
+      .nav_wrapper >a{
+        text-decoration: none;
+        padding-right: 20px;
+        color: white;
+      }
+      .nav_wrapper > a:hover{
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        text-shadow: 3px 3px 3px black;
+      }
+      .scrollable_container{
+        padding: 0px;
+        max-height: 70vh;
+        max-width: auto;
+        overflow-y: auto;
+      }
+      .scrollable_section{
+        max-width: 35vw; 
+        text-align: left;  
+        margin-left: 20%;
+      }
+      .subsection{
+        border-radius: 25px;
+        padding: 6px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-left-style: solid;
+        border-left-width: 1px;
+      }
+      .subsection:hover{
+        cursor: pointer;
+      }
+      .themed-grid-col {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+
+        border: 1px solid rgba(112.520718, 44.062154, 249.437846, .3);
+      }
+
+      .themed-container {
+        padding: .75rem;
+        margin-bottom: 1.5rem;
+
+        border: 1px solid rgba(112.520718, 44.062154, 249.437846, .3);
+      }
+    </style>
+    <script>
+      function modify_subsection(event){
+        const divID = event.id;
+        console.log(divID);
+        document.getElementById(divID).style.borderBottomStyle = "solid";
+        document.getElementById(divID).style.borderBottomWidth = "6px";
+        document.getElementById(divID).style.borderLeftStyle = "solid";
+        document.getElementById(divID).style.borderLeftWidth = "6px";
+
+
+      }
+
+      function reset_subsection(event){
+        const divID = event.id;
+        console.log(divID);
+        document.getElementById(divID).style.borderBottomStyle = "";
+        document.getElementById(divID).style.borderBottomWidth = "";
+        document.getElementById(divID).style.borderLeftStyle = "";
+        document.getElementById(divID).style.borderLeftWidth = "";
+      }
+    </script>
+  </head>
+    <div class="row mb-3 text-center" style="border-bottom-style: solid; border-bottom-color: white; border-bottom-width: 1px;">
+      <div class="col-md-4 themed-grid-col" style="border-style: none;">
+        <a href="https://codepen.io/Keith-Kornacki"><i class="fa fa-codepen" style="font-size:24px; padding-right: 12px;"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61567790081771"><i class="fa fa-facebook-square" style="font-size:24px; padding-right: 12px;"></i></a>
+        <a href="https://www.linkedin.com/in/keith-kornacki/"><i class="fa fa-linkedin-square" style="font-size:24px; padding-right: 12px;"></i></a>
+        <a href="https://github.com/kkornacki/Public_Portfolio"><i class="fa fa-github" style="font-size:24px"></i></a>
+      </div>
+      <div class="col-md-8 themed-grid-col" style="border-style: none;">
+        <div class="nav_wrapper">
+          <a href="" class="">ABOUT</a>
+          <a href="#experience_start">EXPERIENCE</a>
+          <a href="" class="">CONTACT</a>
+          <a href="" class="">PORTFOLIO</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3 text-center" style="height: 80vh" style="border-style: none;">
+      <div class="col-md-4 themed-grid-col" style="border-style: none;">
+        <h3>KEITH KORNACKI</h3>
+        <h5>Back-End Engineer</h5>
+        <br>
+        <img class="intro_image" src="images/headshot.jpg"/>
+        <br><br>
+        
+        <h5 style="font-family: 'Bona Nova SC';">< CODE > YOUR FUTURE</h5>
+        <br>
+        <a href="documents/Kornacki-Keith-Resume.pdf" target="_blank" type="submit" class="btn btn-outline-danger">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5"></path>
+        <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0z"></path>
+        </svg>View Resume</button></a>
+          
+      </div>
+      <div class="col-sm-8 themed-grid-col scrollable_container" style="box-shadow: 2px 2px 2px black; padding: 0px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 14 14">
+          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+        </svg>
+        <div class="col-med-2 themed-grid-col scrollable_section" style="border-style: none;">
+          <p class="mb-4">
+            I am a developer who is passionate about creating robust applications that bring data to the forefront of business decisions.
+            Data <i>drives</i> the modern world, accurate data <i>defines</i> the modern world, and intelligble business decisions based on this 
+            data <i>guides</i> the modern world toward a better future.
+          </p>
+          <p class="mb-4">My key areas of development focus & interest include;
+            <ul style="list-style: none;">
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>Python Development</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>Server-Side Scripting via PHP</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>SQL Query Development & Optimization</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>ETL Data Processing</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>Data Analysis</li>
+            </ul>
+          </p>
+          <p class="mb-4">
+            Prior experiences working in different sub-sectors of Information Technology have given me the opportunity to 
+            gain a full understanding of the tremendous impact scalable, functional, robust systems can have on an organization. 
+            When the technological foundation of an organization fails to provide the right data or tools to employees, the business 
+            will often struggle to remain competitive and profitable. 
+          </p>
+          <p class="mb-4">
+            It is my professional objective to use my skills and knowledge to help develop practical solutions to business' needs. 
+            By creating tools companies can use to improve efficiency, organization, accuracy and profitability, we create an avenue for 
+            company growth, expansion, impact and overall company health. In addition, this will enable a company to guarantee job stability and 
+            longevity for it's employees, thereby impacting the overall community is a positive manner.
+          </p>
+          <p class="mb-4">
+            In addition to a love of developing logic for programs and working with data, I also enjoy the outdoors (camping, kayaking, bonfires), 
+            photography, movies of all genres and of course a plethora of music genres!
+          </p>
+          <div style="width: 100%; text-align: center; font-weight: bold;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 14 14">
+              <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+              <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+            </svg>
+          </div>
+        </div>
+        <br>
+        <a href="https://billandrodsappliance.com/" style="text-decoration: none; color: white;"><div class="col-med-2 themed-grid-col subsection" style="max-width: 35vw; text-align: left;  margin-left: 20%; border-style: none;" id="exp1" onmouseover="modify_subsection(event.currentTarget)" onmouseout="reset_subsection(event.currentTarget)">
+          <table style="border-spacing: 10px;">
+            <tr style="border-spacing: 12px;">
+              <td rowspan="2" style="vertical-align: top;">
+                2021-Present
+              </td>
+              <td></td>
+              <td style="padding-left: 20px;">
+                <b>Technical Liason | Warehouse Operations Manager</b>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="padding-left: 20px; font-size: 10pt;">
+                Reported directly to the CEO and GM regarding software implementations, in-house systems training, installation department 
+                operations and warehouse operations. Key responsibilities and achievements included;
+                <ul>
+                  <li>
+                    Assist with technical implementations & training
+                  </li>
+                  <li>
+                    Developed strategies to improve ROI on existing & proposed technical implementations
+                  </li>
+                  <li>
+                    Created an MS Access database with interfaces for tracking a large-scale installation project
+                  </li>
+                  <li>
+                    Created a Google intranet site utilizing GAS (Google App Script)
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div></a>
+
+        <a href="https://www.homedepot.com/" style="text-decoration: none; color: white;"><div class="col-med-2 themed-grid-col subsection" style="max-width: 35vw; text-align: left;  margin-left: 20%; border-style: none;" id="exp2" onmouseover="modify_subsection(event.currentTarget)"  onmouseout="reset_subsection(event.currentTarget)">
+          <table style="border-spacing: 10px;">
+            <tr style="border-spacing: 12px;">
+              <td rowspan="2" style="vertical-align: top;">
+                2020-2021
+              </td>
+              <td></td>
+              <td style="padding-left: 20px;">
+                <b>Receiving Associate | Lumber Associate</b>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="padding-left: 20px; font-size: 10pt;">
+                Reported to the GM and Department Leads regarding inventory levels, inbound & outbound shipments, and leveraged 
+                the POS system to provide top-tier customer service; Key responsibilities included;
+                <ul>
+                  <li>
+                    Interfaced with the in-house POS system to initiate transaction processing
+                  </li>
+                  <li>
+                    Utilized the robust SMART phone technology to view & manage inventory levels and shipment information
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div></a>
+
+      <div class="col-med-2 themed-grid-col subsection" style="max-width: 35vw; text-align: left;  margin-left: 20%; border-style: none;" id="exp3" onmouseover="modify_subsection(event.currentTarget)"  onmouseout="reset_subsection(event.currentTarget)">
+        <table style="border-spacing: 10px;">
+          <tr style="border-spacing: 12px;">
+            <td rowspan="2" style="vertical-align: top;">
+              2018-2020
+            </td>
+            <td></td>
+            <td style="padding-left: 20px;">
+              <b>Web Developer</b>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-left: 20px; font-size: 10pt;">
+              Worked directly with the Owner to set up the core technology basis for running the company, conducted market analysis 
+              for the company niche, operated as the sole in-house IT consultant; Key responsibilities included;
+              <ul>
+                <li>
+                  Leveraged HTML5 and the Bootstrap CSS framework via CDN to develop a robust static company webpage
+                </li>
+                <li>
+                  Performed an alysis on available technologies to be leveraged for future company use
+                </li>
+                <li>
+                  Conducted market research for the company niche
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <a href="https://www.homedics.com/" style="text-decoration: none; color: white;"><div class="col-med-2 themed-grid-col subsection" style="max-width: 35vw; text-align: left;  margin-left: 20%; border-style: none;" id="exp4" onmouseover="modify_subsection(event.currentTarget)"  onmouseout="reset_subsection(event.currentTarget)">
+        <table style="border-spacing: 10px;">
+          <tr style="border-spacing: 12px;">
+            <td rowspan="2" style="vertical-align: top;">
+              2014-2017
+            </td>
+            <td></td>
+            <td style="padding-left: 20px;">
+              <b>EDI Developer</b>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-left: 20px; font-size: 10pt;">
+              Reported directly to the IT Department Manager & Senior EDI Developer to facilitate development of new EDI integrations, 
+              daily monitoring and resolution of transaction errors, setup and testing of new vendor integrations, confirmation of 
+              successful data mapping to and from the backend database; Key responsibilities and accomplishments included;
+              <ul>
+                <li>
+                  Created new EDI flow services using Software AG's proprietary webMethods platform
+                </li>
+                <li>
+                  Updated existing EDI flow services as needed, with post-update unit and redundancy testing initiatives
+                </li>
+                <li>
+                  Ensured adherence to the ANSI X12, VICS and EDIFACT standards for transactions such as the 810, 820, 846, 850, 856 and 87 transaction sets
+                </li>
+                <li>
+                  Queried the backend database to validate unit testing results using SQL
+                </li>
+                <li>
+                  Created test scripts to facilitate faster unit testing, and analyzed the results for accuracy
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      </a>
+    </div>
+
+    
+</body>
+</html>
